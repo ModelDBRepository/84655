@@ -1,0 +1,38 @@
+objectvar save_window_, rvp_
+objectvar scene_vector_[8]
+objectvar ocbox_, ocbox_list_, scene_, scene_list_
+{ocbox_list_ = new List()  scene_list_ = new List()}
+
+//Begin PointProcessManager
+{
+load_file("pointman.hoc")
+}
+{
+Term ocbox_ = new PointProcessManager(0)
+}
+{object_push(ocbox_)}
+{
+mt.select("SEClamp") i = mt.selected()
+ms[i] = new MechanismStandard("SEClamp")
+ms[i].set("rs", 1, 0)
+ms[i].set("dur1", 5, 0)
+ms[i].set("amp1", -60, 0)
+ms[i].set("dur2", 15, 0)
+ms[i].set("amp2", -70, 0)
+ms[i].set("dur3", 5, 0)
+ms[i].set("amp3", -60, 0)
+mt.select("SEClamp") i = mt.selected() maction(i)
+hoc_ac_ = 0.5
+sec.sec move() d1.flip_to(0)
+}
+{object_pop() doNotify()}
+{
+ocbox_ = ocbox_.v1
+ocbox_.map("PointProcessManager", 858, 155, 313.92, 453.12)
+}
+objref ocbox_
+//End PointProcessManager
+
+{WindowMenu[0].ses_gid(1, 2, 1, "Stimuli")}
+objectvar scene_vector_[1]
+{doNotify()}

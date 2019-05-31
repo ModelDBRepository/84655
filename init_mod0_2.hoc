@@ -1,0 +1,5 @@
+load_file ("mod0_2CellBuild.ses")
+load_file ("SEClamp.ses")
+load_file ("Controls.ses")
+load_file ("Graphs.ses")
+load_file ("ssprocinit.hoc")

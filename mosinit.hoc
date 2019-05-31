@@ -1,0 +1,7 @@
+load_file("nrngui.hoc")
+load_file("init_mod0_2.hoc")
+
+xpanel("Fig 10a Oltedal et al 2007")
+xbutton("create fig10a","xopen(\"fig10a.hoc\")")
+xpanel()
+
